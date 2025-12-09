@@ -18,9 +18,12 @@ function App() {
   
   return (
     <div className="App">
+      <h1>thực hành phần mềm mã nguồn mở</h1>
       fetch data from backend: {data}
-      <h1>thực hành phần mềm mã nguồn mở</h1>
-      <h1>thực hành phần mềm mã nguồn mở</h1>
+      <h2>Nguyễn Trí Cường</h2>
+      <h2>MSSV: DH52200424</h2>
+      <h2>Lớp: D22-TH08</h2>
+      
     </div>
   );
 }
