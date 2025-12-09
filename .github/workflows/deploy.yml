@@ -38,6 +38,6 @@ jobs:
           protocol: ftps
           port: 21
           # nếu React của bạn build ra folder 'dist' thì đổi lại ./build -> ./dist
-          local-dir: ./build
+          local-dir: ./build/
           server-dir: ${{ vars.FTP_DIR }}        # /www.nguyentricuong.somee.com/
           dangerous-clean-slate: true            # xoá file cũ trên host rồi upload lại
