@@ -28,10 +28,10 @@ jobs:
         with:
           protocol: ftp
           secure: false
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          server: htdat2401.somee.com
+          username: DatHaTan
+          password: htdat2401@
           port: 21
           local-dir: ./build/   # nếu Vite -> ./dist/
-          server-dir: ${{ secrets.FTP_DIR }}
+          server-dir: /http://www.htdat2401.somee.com/
           dangerous-clean-slate: true
