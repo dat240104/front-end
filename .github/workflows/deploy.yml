@@ -25,7 +25,7 @@ jobs:
         with:
           server: htdat2401.somee.com
           username: DatHaTan
-          password: ${{ secrets.FTP_PASSWORD }}
+          password: HTDat2401@
           port: 21
           protocol: ftp
           local-dir: ./build/
