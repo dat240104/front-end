@@ -1,37 +1,33 @@
 name: Deploy frontend to Somee
-
 on:
   push:
     branches: [ main ]
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
-
+      
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
+      
       - name: Install dependencies
         run: npm install
-
+      
       - name: Build React app
         run: npm run build
-
+      
       - name: Deploy lên Somee bằng FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          protocol: ftp
-          secure: false
           server: htdat2401.somee.com
           username: DatHaTan
-          password: htdat2401@
+          password: ${{ secrets.FTP_PASSWORD }}
           port: 21
-          local-dir: ./build/   # nếu Vite -> ./dist/
-          server-dir: /http://www.htdat2401.somee.com/
+          protocol: ftp
+          local-dir: ./build/
+          server-dir: /www.htdat2401.somee.com/
           dangerous-clean-slate: true
