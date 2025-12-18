@@ -21,6 +21,7 @@ console.log(data)
     <div className="App">
       <h1>thực hành phần mềm mã nguồn mở</h1>
       <div> Dat dh42200460</div>
+      <div>asd</div>
           <div>
             <h2>data: {data}</h2>
           </div>
