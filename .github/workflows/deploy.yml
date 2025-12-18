@@ -7,9 +7,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
-    # rất quan trọng: phải khớp tên Environment bạn đang dùng
-    environment: production   # nếu env tên khác (vd: "somee") thì sửa lại
+    environment: production   # tên environment bạn đã tạo
 
     steps:
       - name: Checkout source
@@ -23,22 +21,20 @@ jobs:
       - name: Install dependencies
         run: |
           npm install
-          # hoặc: npm ci nếu bạn có file package-lock.json
 
       - name: Build React app
         run: |
-          npm run build        # nếu dùng Vite: npm run build và build ra thư mục dist
+          npm run build   # hoặc 'npm run build' nếu Vite sẽ ra thư mục dist
 
-      - name: Deploy len Somee voi phuong thuc FTP
+      - name: Deploy lên Somee bằng FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           protocol: ftp
           secure: false
-          server: ${{ secrets.FTP_SERVER }}      # Environment secret bạn đã tạo
-          username: ${{ vars.FTP_USER }}         # Environment variable
-          password: ${{ vars.FTP_PASSWORD }}     # Environment variable
+          server: ${{ env.FTP_SERVER }}
+          username: ${{ env.FTP_USER }}
+          password: ${{ env.FTP_PASSWORD }}
           port: 21
-          # nếu React của bạn build ra folder 'dist' thì đổi lại ./build -> ./dist
-          local-dir: ./build/
-          server-dir: ${{ vars.FTP_DIR }}        # /www.nguyentricuong.somee.com/
-          dangerous-clean-slate: true            # xoá file cũ trên host rồi upload lại
+          local-dir: ./build/   # nếu Vite -> ./dist/
+          server-dir: ${{ env.FTP_DIR }}
+          dangerous-clean-slate: true
