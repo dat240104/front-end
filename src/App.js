@@ -20,9 +20,6 @@ console.log(data)
   return (
     <div className="App">
       <h1>PM1-Cuối kỳ-Hà Tấn Đạt</h1>
-          <div>
-            <h2>data: {data}</h2>
-          </div>
     </div>
   );
 }
