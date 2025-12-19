@@ -19,10 +19,7 @@ function App() {
 console.log(data)
   return (
     <div className="App">
-      <h1>thực hành phần mềm mã nguồn mở</h1>
-      <div> Dat dh42200460</div>
-      <div>fadfadfafasd</div>
-      <div>D22_TH08</div>
+      <h1>PM1-Cuối kỳ-Hà Tấn Đạt</h1>
           <div>
             <h2>data: {data}</h2>
           </div>
